@@ -30,7 +30,9 @@ io.on('connection', (socket) => {
   socket.on('join:admin', () => socket.join('admin'));
   socket.on('disconnect', () => {});
 });
-
+app.get('/', (req, res) => {
+  res.send('CivicPulse Backend is Running 🚀')
+})
 app.set('io', io);
 slaChecker.setIo(io);
 
